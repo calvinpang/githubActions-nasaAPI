@@ -1,0 +1,18 @@
+name: Fetch NASA Data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch-apod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call NASA API
+        run: |
+          curl -s "https://api.nasa.gov/planetary/apod?api_key=${{ secrets.NASA_API_KEY }}" > apod.json
+
+      - name: Upload APOD artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: apod-result
+          path: apod.json
