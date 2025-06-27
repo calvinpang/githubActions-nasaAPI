@@ -11,8 +11,8 @@ jobs:
         run: |
           curl -s "https://api.nasa.gov/planetary/apod?api_key=${{ secrets.NASA_API_KEY }}" > apod.json
 
-      - name: Upload APOD artifact
+      - name: Upload API artifact
         uses: actions/upload-artifact@v4
         with:
-          name: apod-result
-          path: apod.json
+          name: nasa-api-result
+          path: nasa-api.json
