@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Call NASA API
         run: |
-          curl -s "https://api.nasa.gov/planetary/apod?api_key=${{ secrets.NASA_API_KEY }}" > apod.json
+          curl -s "https://api.nasa.gov/planetary/apod?api_key=${{ secrets.NASA_API_KEY }}" > anasa-api.json
 
       - name: Upload API artifact
         uses: actions/upload-artifact@v4
